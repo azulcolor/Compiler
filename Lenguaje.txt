@@ -1,0 +1,29 @@
+Top
+
+//Zona de variables
+
+Thing {
+	//Inicio variables
+	int numeroUno;
+	int numeroDos;
+	int numeroTres;
+	int resultado;
+}
+
+//Inicio programa
+
+Sky {
+	show('Vamos a sumar');
+	show('Ingresa el primer número);
+	get(numeroUno);
+	show('Ingresa el segundo número);
+	get(numeroDos);
+	show('Ingresa el tercer número);
+	get(numeroTres);
+
+	inf();
+} 
+
+//Termino programa
+
+Down
