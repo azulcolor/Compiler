@@ -1,0 +1,62 @@
+.header {
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  padding: .5vh 2vw;
+  color: rgb(228, 228, 228);
+  border-bottom: .2px solid rgb(48, 48, 48);
+  margin-bottom: 24px;
+}
+
+.inputfile {
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+label {
+    cursor: pointer;
+    width: 120px;
+    background-color: rgb(74, 103, 128);
+    padding: 1vh 1vw;
+    border-radius: 5px 5px 0 0;
+    color: rgb(228, 228, 228);
+    font-size: 1.2rem;
+    font-weight: 500;
+    box-shadow:  2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+button {
+    cursor: pointer;
+    width: 120px;
+    background-color: rgb(73, 90, 95);
+    padding: 1vh 1vw;
+    border-radius: 5px 5px 0 0;
+    color: rgb(228, 228, 228);
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: center;
+    border: none;
+}
+
+.compiler {
+    background-color: rgb(27, 28, 34);
+    margin-bottom: 5px;
+    padding-left: 5px;
+    border: 1px solid rgb(20, 20, 20);
+    height: 30vh;
+}
+
+.compiler p {
+    margin: 16px 0;
+}
