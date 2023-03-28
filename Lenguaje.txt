@@ -13,12 +13,12 @@ Thing {
 //Inicio programa
 
 Sky {
-	show('Vamos a sumar');
-	show('Ingresa el primer número);
+	//show('Vamos a sumar');
+	//show('Ingresa el primer numero');
 	get(numeroUno);
-	show('Ingresa el segundo número);
+	show('Ingresa el segundo numero');
 	get(numeroDos);
-	show('Ingresa el tercer número);
+	show('Ingresa el tercer numero');
 	get(numeroTres);
 
 	inf();
