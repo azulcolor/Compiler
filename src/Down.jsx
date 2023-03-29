@@ -1,15 +1,18 @@
-import { errors } from "./functions"
 import './App.css'
+import { prueba2 } from './lexer'
 
-export default function Down({text, textArray, compile}) {
-
-    return (
-        <div className="compiler">
-           
-           {compile ? errors(text, textArray).errors.map((error, index) => {
-                return <p key={index} style={{color: `${errors(text, textArray).color}`}}>{index + 1} . {error}</p>
-           }) : null}
-           
-        </div>
-    )
+export default function Down({ errors }) {
+  return (
+    <div className='compiler'>
+      {/* {errors &&
+        errors.map((error, index) => {
+          return (
+            <p style={{ color: 'red' }}>
+              Error de estructura en la columna {error.col} línea {error.line}{' '}
+              valor {error.text}
+            </p>
+          )
+        })} */}
+    </div>
+  )
 }

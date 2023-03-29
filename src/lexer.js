@@ -97,13 +97,16 @@ export const prueba2 = (text) => {
 }
 
 export const prueba3 = (text) => {
+  let jelou = []
   try {
     variables.reset(text)
     let token = variables.next()
     while (token) {
       console.log(variables.formatError(token, 'Invalid sintaxis'))
+      jelou.push(variables.formatError(token, 'Invalid sintaxis'))
       token = variables.next()
     }
+    return jelou
   } catch (e) {}
 }
 

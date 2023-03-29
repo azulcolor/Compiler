@@ -15,13 +15,13 @@ function App() {
   const [textArray, setTextArray] = useState([])
   const [compile, setCompile] = useState(false)
 
+  let errors = prueba3(text)
+
   const show = (value) => {
     setText(deleteComments(value))
     setTextArray(value.split(jump))
   }
-  if (text) {
-    console.log(prueba3(text))
-  }
+  console.log(text)
 
   return (
     <div className='App'>
@@ -39,7 +39,8 @@ function App() {
           value={text}
           onChange={(value) => show(value)}
         />
-        <Down text={cleanText(text)} textArray={textArray} compile={compile} />
+        <Down errors={errors} />
+        {errors ? console.log(errors) : console.log(errors)}
       </div>
     </div>
   )
