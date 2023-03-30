@@ -1,18 +1,19 @@
 import './App.css'
-import { prueba2 } from './lexer'
 
-export default function Down({ errors }) {
+export default function Down({ errors, compile }) {
+
+  if (!compile) return null
+
   return (
     <div className='compiler'>
-      {/* {errors &&
+      {errors ?
         errors.map((error, index) => {
           return (
             <p style={{ color: 'red' }}>
-              Error de estructura en la columna {error.col} línea {error.line}{' '}
-              valor {error.text}
+              {index + 1} - {error}
             </p>
           )
-        })} */}
+        }) : (<p style={{ color: 'green' }}>No errors</p>)}
     </div>
   )
 }

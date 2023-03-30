@@ -6,22 +6,17 @@ import Down from './Down'
 import { jump } from './expressions'
 import { cleanText, deleteComments } from './functions'
 import './App.css'
-import { prueba } from './lexer'
-import { prueba2 } from './lexer'
-import { prueba3 } from './lexer'
 
 function App() {
   const [text, setText] = useState('')
   const [textArray, setTextArray] = useState([])
   const [compile, setCompile] = useState(false)
-
-  let errors = prueba3(text)
+  const [errors, setErrors] = useState();
 
   const show = (value) => {
     setText(deleteComments(value))
     setTextArray(value.split(jump))
   }
-  console.log(text)
 
   return (
     <div className='App'>
@@ -32,6 +27,7 @@ function App() {
           setTextArray={setTextArray}
           setCompile={setCompile}
           text={text}
+          setErrors={setErrors}
         />
         <Editor
           height='60vh'
@@ -39,8 +35,7 @@ function App() {
           value={text}
           onChange={(value) => show(value)}
         />
-        <Down errors={errors} />
-        {errors ? console.log(errors) : console.log(errors)}
+        <Down errors={errors} compile = {compile}/>
       </div>
     </div>
   )

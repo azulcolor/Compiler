@@ -1,36 +1,44 @@
-import { jump } from './expressions';
-import './App.css';
+import { jump } from './expressions'
+import './App.css'
+import { lex, cleanError } from './lexer'
 
 const readFile = (e, setText, setTextArray) => {
-  const file = e.target.files[0];
-  if (!file) return;
+  const file = e.target.files[0]
+  if (!file) return
 
-  const reader = new FileReader();
+  const reader = new FileReader()
 
-  reader.readAsText(file);
+  reader.readAsText(file)
 
   reader.onload = () => {
-    setText(reader.result);
-    setTextArray(reader.result.split(jump));
-  };
+    setText(reader.result)
+    setTextArray(reader.result.split(jump))
+  }
 
   reader.onerror = () => {
-    console.log(reader.error);
-  };
-};
+    console.log(reader.error)
+  }
+}
 
-export default function Input({ setText, setTextArray, setCompile, text }) {
+const compile = (text, setErrors, setCompile) => {
+  const errors = lex(text)
+  setErrors(errors)
+  setCompile(true)
+  cleanError()
+}
+
+export default function Input({ setText, setTextArray, text, setErrors, setCompile }) {
   return (
-    <div style={{display: 'flex'}}>
+    <div style={{ display: 'flex' }}>
       <input
-        type="file"
+        type='file'
         name='file'
         id='file'
-        className="inputfile"
+        className='inputfile'
         onChange={(e) => readFile(e, setText, setTextArray)}
       />
-      <label htmlFor="file"> Select a file</label>
-      <button onClick={() => text !== '' ? setCompile(true) : null}>Compile</button>
+      <label htmlFor='file'> Select a file</label>
+      <button onClick={() => compile(text, setErrors, setCompile)}>Compile</button>
     </div>
-  );
+  )
 }
